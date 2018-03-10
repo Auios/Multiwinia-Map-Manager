@@ -23,6 +23,7 @@ namespace MultiwiniaMapManager
             ProcessStartInfo processInfo = new ProcessStartInfo();
             processInfo.FileName = "Multiwinia.exe";
             Process.Start(processInfo);
+            Application.Exit();
         }
     }
 }
