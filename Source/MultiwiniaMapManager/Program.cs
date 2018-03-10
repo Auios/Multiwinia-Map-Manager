@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,16 +10,16 @@ namespace MultiwiniaMapManager
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
+#if (!DEBUG)
             if (!startupCheck())
             {
                 Environment.Exit(1);
             }
+#endif
+            setupFolders();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -38,6 +39,14 @@ namespace MultiwiniaMapManager
             }
 
             return result;
+        }
+
+        static void setupFolders()
+        {
+            if(!Directory.Exists("data/levels-disabled"))
+                Directory.CreateDirectory("data/levels-disabled");
+            if (!Directory.Exists("data/levels"))
+                Directory.CreateDirectory("data/levels");
         }
     }
 }
