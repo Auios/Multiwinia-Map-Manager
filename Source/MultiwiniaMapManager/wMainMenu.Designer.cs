@@ -35,14 +35,15 @@
             this.lstbxDisabled = new System.Windows.Forms.ListBox();
             this.btnDisable = new System.Windows.Forms.Button();
             this.btnEnable = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPlay
             // 
             this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPlay.Location = new System.Drawing.Point(461, 382);
+            this.btnPlay.Location = new System.Drawing.Point(446, 412);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(75, 23);
+            this.btnPlay.Size = new System.Drawing.Size(90, 23);
             this.btnPlay.TabIndex = 0;
             this.btnPlay.Text = "Play";
             this.btnPlay.UseVisualStyleBackColor = true;
@@ -92,6 +93,7 @@
             this.btnDisable.TabIndex = 5;
             this.btnDisable.Text = "Disable";
             this.btnDisable.UseVisualStyleBackColor = true;
+            this.btnDisable.Click += new System.EventHandler(this.btnDisable_Click);
             // 
             // btnEnable
             // 
@@ -102,11 +104,22 @@
             this.btnEnable.Text = "Enable";
             this.btnEnable.UseVisualStyleBackColor = true;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Location = new System.Drawing.Point(446, 382);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 23);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Add Map";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
             // wMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 414);
+            this.ClientSize = new System.Drawing.Size(548, 447);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEnable);
             this.Controls.Add(this.btnDisable);
             this.Controls.Add(this.lstbxDisabled);
@@ -135,6 +148,7 @@
         private System.Windows.Forms.ListBox lstbxDisabled;
         private System.Windows.Forms.Button btnDisable;
         private System.Windows.Forms.Button btnEnable;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
 
