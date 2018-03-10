@@ -17,18 +17,25 @@ namespace MultiwiniaMapManager
         public wMainMenu()
         {
             InitializeComponent();
-            populateLists();
+            refreshLists();
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            ProcessStartInfo processInfo = new ProcessStartInfo();
-            processInfo.FileName = "Multiwinia.exe";
-            Process.Start(processInfo);
-            Application.Exit();
+            try
+            {
+                ProcessStartInfo processInfo = new ProcessStartInfo();
+                processInfo.FileName = "Multiwinia.exe";
+                Process.Start(processInfo);
+                Application.Exit();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Multiwinia.exe not found!\nTo fix this error run this program in the same directory with Multiwinia.exe\n", "Bad directory");
+            }
         }
 
-        private void populateLists()
+        private void refreshLists()
         {
             lstbxEnabled.Items.Clear();
             lstbxDisabled.Items.Clear();
@@ -50,7 +57,24 @@ namespace MultiwiniaMapManager
 
         private void btnDisable_Click(object sender, EventArgs e)
         {
-            
+            int index = lstbxEnabled.SelectedIndex;
+            if(index >= 0)
+            {
+                string fileName = lstbxEnabled.Items[index].ToString();
+                File.Move("data\\levels\\" + fileName, "data\\levels-disabled\\" + fileName);
+            }
+            refreshLists();
+        }
+
+        private void btnEnable_Click(object sender, EventArgs e)
+        {
+            int index = lstbxDisabled.SelectedIndex;
+            if (index >= 0)
+            {
+                string fileName = lstbxDisabled.Items[index].ToString();
+                File.Move("data\\levels-disabled\\" + fileName, "data\\levels\\" + fileName);
+            }
+            refreshLists();
         }
     }
 }

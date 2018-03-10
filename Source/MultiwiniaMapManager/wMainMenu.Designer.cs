@@ -103,6 +103,7 @@
             this.btnEnable.TabIndex = 5;
             this.btnEnable.Text = "Enable";
             this.btnEnable.UseVisualStyleBackColor = true;
+            this.btnEnable.Click += new System.EventHandler(this.btnEnable_Click);
             // 
             // btnAdd
             // 
