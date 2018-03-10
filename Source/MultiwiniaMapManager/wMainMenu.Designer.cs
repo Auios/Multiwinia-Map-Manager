@@ -40,7 +40,7 @@
             // btnPlay
             // 
             this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPlay.Location = new System.Drawing.Point(461, 423);
+            this.btnPlay.Location = new System.Drawing.Point(461, 382);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(75, 23);
             this.btnPlay.TabIndex = 0;
@@ -88,16 +88,16 @@
             // 
             this.btnDisable.Location = new System.Drawing.Point(12, 382);
             this.btnDisable.Name = "btnDisable";
-            this.btnDisable.Size = new System.Drawing.Size(75, 23);
+            this.btnDisable.Size = new System.Drawing.Size(91, 23);
             this.btnDisable.TabIndex = 5;
             this.btnDisable.Text = "Disable";
             this.btnDisable.UseVisualStyleBackColor = true;
             // 
             // btnEnable
             // 
-            this.btnEnable.Location = new System.Drawing.Point(287, 382);
+            this.btnEnable.Location = new System.Drawing.Point(286, 382);
             this.btnEnable.Name = "btnEnable";
-            this.btnEnable.Size = new System.Drawing.Size(75, 23);
+            this.btnEnable.Size = new System.Drawing.Size(91, 23);
             this.btnEnable.TabIndex = 5;
             this.btnEnable.Text = "Enable";
             this.btnEnable.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 458);
+            this.ClientSize = new System.Drawing.Size(548, 414);
             this.Controls.Add(this.btnEnable);
             this.Controls.Add(this.btnDisable);
             this.Controls.Add(this.lstbxDisabled);
