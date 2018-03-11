@@ -36,6 +36,7 @@
             this.btnDisable = new System.Windows.Forms.Button();
             this.btnEnable = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPlay
@@ -69,21 +70,25 @@
             // 
             // lstbxEnabled
             // 
+            this.lstbxEnabled.BackColor = System.Drawing.SystemColors.ControlDark;
             this.lstbxEnabled.FormattingEnabled = true;
             this.lstbxEnabled.ItemHeight = 15;
             this.lstbxEnabled.Location = new System.Drawing.Point(12, 27);
             this.lstbxEnabled.Name = "lstbxEnabled";
             this.lstbxEnabled.Size = new System.Drawing.Size(250, 349);
             this.lstbxEnabled.TabIndex = 3;
+            this.lstbxEnabled.Enter += new System.EventHandler(this.lstbxEnabled_Enter);
             // 
             // lstbxDisabled
             // 
+            this.lstbxDisabled.BackColor = System.Drawing.SystemColors.ControlDark;
             this.lstbxDisabled.FormattingEnabled = true;
             this.lstbxDisabled.ItemHeight = 15;
             this.lstbxDisabled.Location = new System.Drawing.Point(286, 27);
             this.lstbxDisabled.Name = "lstbxDisabled";
             this.lstbxDisabled.Size = new System.Drawing.Size(250, 349);
             this.lstbxDisabled.TabIndex = 4;
+            this.lstbxDisabled.Enter += new System.EventHandler(this.lstbxDisabled_Enter);
             // 
             // btnDisable
             // 
@@ -114,12 +119,26 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add Map";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(146, 412);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(116, 23);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Delete Map";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // wMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(548, 447);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEnable);
             this.Controls.Add(this.btnDisable);
@@ -150,6 +169,7 @@
         private System.Windows.Forms.Button btnDisable;
         private System.Windows.Forms.Button btnEnable;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

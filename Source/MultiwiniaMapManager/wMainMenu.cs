@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
@@ -75,6 +68,54 @@ namespace MultiwiniaMapManager
                 File.Move("data\\levels-disabled\\" + fileName, "data\\levels\\" + fileName);
             }
             refreshLists();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.InitialDirectory = "C:\\";
+            fd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            fd.RestoreDirectory = true;
+            string fileName = "AAAA";
+
+            if(fd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    fileName = fd.FileName.Substring(fd.FileName.LastIndexOf("\\")).Remove(0,1);
+                    File.Copy(fd.FileName, "data\\levels\\" + fileName);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                refreshLists();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lstbxEnabled.SelectedIndex >= 0)
+            {
+                MessageBox.Show("Are you sure you want to delete\n" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString()));
+                File.Delete("data\\levels\\" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString());
+            }
+
+            if (lstbxDisabled.SelectedIndex >= 0)
+            {
+                File.Delete("data\\levels-disabled\\" + lstbxDisabled.Items[lstbxDisabled.SelectedIndex].ToString());
+            }
+            refreshLists();
+        }
+
+        private void lstbxEnabled_Enter(object sender, EventArgs e)
+        {
+            lstbxDisabled.ClearSelected();
+        }
+
+        private void lstbxDisabled_Enter(object sender, EventArgs e)
+        {
+            lstbxEnabled.ClearSelected();
         }
     }
 }
