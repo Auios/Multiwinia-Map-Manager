@@ -53,7 +53,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 15);
             this.label1.TabIndex = 1;
@@ -62,7 +63,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(283, 9);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 15);
             this.label2.TabIndex = 2;
@@ -70,29 +72,35 @@
             // 
             // lstbxEnabled
             // 
+            this.lstbxEnabled.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstbxEnabled.BackColor = System.Drawing.SystemColors.ControlDark;
             this.lstbxEnabled.FormattingEnabled = true;
+            this.lstbxEnabled.IntegralHeight = false;
             this.lstbxEnabled.ItemHeight = 15;
             this.lstbxEnabled.Location = new System.Drawing.Point(12, 27);
             this.lstbxEnabled.Name = "lstbxEnabled";
-            this.lstbxEnabled.Size = new System.Drawing.Size(250, 349);
+            this.lstbxEnabled.Size = new System.Drawing.Size(524, 159);
             this.lstbxEnabled.TabIndex = 3;
             this.lstbxEnabled.Enter += new System.EventHandler(this.lstbxEnabled_Enter);
             // 
             // lstbxDisabled
             // 
+            this.lstbxDisabled.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lstbxDisabled.BackColor = System.Drawing.SystemColors.ControlDark;
             this.lstbxDisabled.FormattingEnabled = true;
+            this.lstbxDisabled.IntegralHeight = false;
             this.lstbxDisabled.ItemHeight = 15;
-            this.lstbxDisabled.Location = new System.Drawing.Point(286, 27);
+            this.lstbxDisabled.Location = new System.Drawing.Point(12, 218);
             this.lstbxDisabled.Name = "lstbxDisabled";
-            this.lstbxDisabled.Size = new System.Drawing.Size(250, 349);
+            this.lstbxDisabled.Size = new System.Drawing.Size(524, 159);
             this.lstbxDisabled.TabIndex = 4;
             this.lstbxDisabled.Enter += new System.EventHandler(this.lstbxDisabled_Enter);
             // 
             // btnDisable
             // 
-            this.btnDisable.Location = new System.Drawing.Point(12, 382);
+            this.btnDisable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDisable.Location = new System.Drawing.Point(12, 412);
             this.btnDisable.Name = "btnDisable";
             this.btnDisable.Size = new System.Drawing.Size(91, 23);
             this.btnDisable.TabIndex = 5;
@@ -102,7 +110,8 @@
             // 
             // btnEnable
             // 
-            this.btnEnable.Location = new System.Drawing.Point(286, 382);
+            this.btnEnable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEnable.Location = new System.Drawing.Point(12, 383);
             this.btnEnable.Name = "btnEnable";
             this.btnEnable.Size = new System.Drawing.Size(91, 23);
             this.btnEnable.TabIndex = 5;
@@ -113,7 +122,7 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(446, 382);
+            this.btnAdd.Location = new System.Drawing.Point(446, 383);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 23);
             this.btnAdd.TabIndex = 6;
@@ -123,8 +132,8 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(146, 412);
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDelete.Location = new System.Drawing.Point(109, 412);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(116, 23);
             this.btnDelete.TabIndex = 7;
@@ -148,6 +157,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPlay);
             this.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(564, 400);
