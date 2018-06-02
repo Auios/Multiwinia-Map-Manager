@@ -55,7 +55,16 @@ namespace MultiwiniaMapManager
             foreach (var item in lstbxEnabled.SelectedItems)
             {
                 string fileName = item.ToString();
-                File.Move("data\\levels\\" + fileName, "data\\levels-disabled\\" + fileName);
+                try
+                {
+                    File.Move("data\\levels\\" + fileName, "data\\levels-disabled\\" + fileName);
+                }
+                catch(Exception)
+                {
+                    //File already exists
+                    File.Delete("data\\levels-disabled\\" + fileName);
+                    File.Move("data\\levels\\" + fileName, "data\\levels-disabled\\" + fileName);
+                }
             }
             refreshLists();
         }
@@ -65,7 +74,17 @@ namespace MultiwiniaMapManager
             foreach(var item in lstbxDisabled.SelectedItems)
             {
                 string fileName = item.ToString();
-                File.Move("data\\levels-disabled\\" + fileName, "data\\levels\\" + fileName);
+                
+                try
+                {
+                    File.Move("data\\levels-disabled\\" + fileName, "data\\levels\\" + fileName);
+                }
+                catch (Exception)
+                {
+                    //File already exists
+                    File.Delete("data\\levels\\" + fileName);
+                    File.Move("data\\levels-disabled\\" + fileName, "data\\levels\\" + fileName);
+                }
             }
             refreshLists();
         }
@@ -87,7 +106,7 @@ namespace MultiwiniaMapManager
                     try
                     {
                         string fullFileName = fileName.Substring(fileName.LastIndexOf("\\")).Remove(0, 1);
-                        File.Copy(fullFileName, "data\\levels\\" + fullFileName);
+                        File.Copy(fileName, "data\\levels\\" + fullFileName);
                     }
                     catch (Exception ex)
                     {
@@ -100,6 +119,8 @@ namespace MultiwiniaMapManager
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //Doesnt prompt still. Not sure why but not sure if I care enough to fix it. :/
+            //At least it deletes the files
             if (lstbxEnabled.SelectedIndex >= 0)
             {
                 DialogResult dr = MessageBox.Show("Are you sure you want to delete\n" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString(),"Warning",MessageBoxButtons.OKCancel);
