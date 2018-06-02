@@ -22,7 +22,7 @@ namespace MultiwiniaMapManager
                     FileName = "Multiwinia.exe"
                 };
                 Process.Start(processInfo);
-                Application.Exit();
+                //Application.Exit();
             }
             catch(Exception)
             {
@@ -100,8 +100,9 @@ namespace MultiwiniaMapManager
         {
             if (lstbxEnabled.SelectedIndex >= 0)
             {
-                MessageBox.Show("Are you sure you want to delete\n" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString());
-                File.Delete("data\\levels\\" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString());
+                DialogResult dr = MessageBox.Show("Are you sure you want to delete\n" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString(),"Warning",MessageBoxButtons.OKCancel);
+                if(dr == DialogResult.OK)
+                    File.Delete("data\\levels\\" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString());
             }
 
             if (lstbxDisabled.SelectedIndex >= 0)
@@ -111,14 +112,7 @@ namespace MultiwiniaMapManager
             refreshLists();
         }
 
-        private void lstbxEnabled_Enter(object sender, EventArgs e)
-        {
-            lstbxDisabled.ClearSelected();
-        }
-
-        private void lstbxDisabled_Enter(object sender, EventArgs e)
-        {
-            lstbxEnabled.ClearSelected();
-        }
+        private void lstbxEnabled_Enter(object sender, EventArgs e) => lstbxDisabled.ClearSelected();
+        private void lstbxDisabled_Enter(object sender, EventArgs e) => lstbxEnabled.ClearSelected();
     }
 }

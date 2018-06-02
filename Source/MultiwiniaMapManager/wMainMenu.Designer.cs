@@ -80,6 +80,7 @@
             this.lstbxEnabled.ItemHeight = 15;
             this.lstbxEnabled.Location = new System.Drawing.Point(12, 27);
             this.lstbxEnabled.Name = "lstbxEnabled";
+            this.lstbxEnabled.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstbxEnabled.Size = new System.Drawing.Size(524, 159);
             this.lstbxEnabled.TabIndex = 3;
             this.lstbxEnabled.Enter += new System.EventHandler(this.lstbxEnabled_Enter);
@@ -93,6 +94,7 @@
             this.lstbxDisabled.ItemHeight = 15;
             this.lstbxDisabled.Location = new System.Drawing.Point(12, 218);
             this.lstbxDisabled.Name = "lstbxDisabled";
+            this.lstbxDisabled.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstbxDisabled.Size = new System.Drawing.Size(524, 159);
             this.lstbxDisabled.TabIndex = 4;
             this.lstbxDisabled.Enter += new System.EventHandler(this.lstbxDisabled_Enter);
