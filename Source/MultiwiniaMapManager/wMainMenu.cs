@@ -76,19 +76,23 @@ namespace MultiwiniaMapManager
             {
                 InitialDirectory = "C:\\",
                 Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*",
-                RestoreDirectory = true
+                RestoreDirectory = true,
+                Multiselect = true
             };
 
             if(fd.ShowDialog() == DialogResult.OK)
             {
-                try
+                foreach(string fileName in fd.FileNames)
                 {
-                    string fileName = fd.FileName.Substring(fd.FileName.LastIndexOf("\\")).Remove(0,1);
-                    File.Copy(fd.FileName, "data\\levels\\" + fileName);
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    try
+                    {
+                        string fullFileName = fileName.Substring(fileName.LastIndexOf("\\")).Remove(0, 1);
+                        File.Copy(fullFileName, "data\\levels\\" + fullFileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 refreshLists();
             }
