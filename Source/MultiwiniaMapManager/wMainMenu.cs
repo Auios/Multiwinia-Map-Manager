@@ -52,10 +52,9 @@ namespace MultiwiniaMapManager
 
         private void btnDisable_Click(object sender, EventArgs e)
         {
-            int index = lstbxEnabled.SelectedIndex;
-            if(index >= 0)
+            foreach (var item in lstbxEnabled.SelectedItems)
             {
-                string fileName = lstbxEnabled.Items[index].ToString();
+                string fileName = item.ToString();
                 File.Move("data\\levels\\" + fileName, "data\\levels-disabled\\" + fileName);
             }
             refreshLists();
@@ -63,10 +62,9 @@ namespace MultiwiniaMapManager
 
         private void btnEnable_Click(object sender, EventArgs e)
         {
-            int index = lstbxDisabled.SelectedIndex;
-            if (index >= 0)
+            foreach(var item in lstbxDisabled.SelectedItems)
             {
-                string fileName = lstbxDisabled.Items[index].ToString();
+                string fileName = item.ToString();
                 File.Move("data\\levels-disabled\\" + fileName, "data\\levels\\" + fileName);
             }
             refreshLists();

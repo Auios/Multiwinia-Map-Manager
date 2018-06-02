@@ -32,19 +32,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lstbxEnabled = new System.Windows.Forms.ListBox();
-            this.lstbxDisabled = new System.Windows.Forms.ListBox();
             this.btnDisable = new System.Windows.Forms.Button();
             this.btnEnable = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.lstbxDisabled = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnPlay
             // 
             this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPlay.Location = new System.Drawing.Point(446, 412);
+            this.btnPlay.Location = new System.Drawing.Point(399, 550);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(90, 23);
+            this.btnPlay.Size = new System.Drawing.Size(137, 23);
             this.btnPlay.TabIndex = 0;
             this.btnPlay.Text = "Play";
             this.btnPlay.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 200);
+            this.label2.Location = new System.Drawing.Point(9, 263);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 15);
             this.label2.TabIndex = 2;
@@ -80,31 +80,17 @@
             this.lstbxEnabled.ItemHeight = 15;
             this.lstbxEnabled.Location = new System.Drawing.Point(12, 27);
             this.lstbxEnabled.Name = "lstbxEnabled";
-            this.lstbxEnabled.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lstbxEnabled.Size = new System.Drawing.Size(524, 159);
+            this.lstbxEnabled.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lstbxEnabled.Size = new System.Drawing.Size(524, 226);
             this.lstbxEnabled.TabIndex = 3;
             this.lstbxEnabled.Enter += new System.EventHandler(this.lstbxEnabled_Enter);
-            // 
-            // lstbxDisabled
-            // 
-            this.lstbxDisabled.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lstbxDisabled.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.lstbxDisabled.FormattingEnabled = true;
-            this.lstbxDisabled.IntegralHeight = false;
-            this.lstbxDisabled.ItemHeight = 15;
-            this.lstbxDisabled.Location = new System.Drawing.Point(12, 218);
-            this.lstbxDisabled.Name = "lstbxDisabled";
-            this.lstbxDisabled.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lstbxDisabled.Size = new System.Drawing.Size(524, 159);
-            this.lstbxDisabled.TabIndex = 4;
-            this.lstbxDisabled.Enter += new System.EventHandler(this.lstbxDisabled_Enter);
             // 
             // btnDisable
             // 
             this.btnDisable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDisable.Location = new System.Drawing.Point(12, 412);
+            this.btnDisable.Location = new System.Drawing.Point(12, 550);
             this.btnDisable.Name = "btnDisable";
-            this.btnDisable.Size = new System.Drawing.Size(91, 23);
+            this.btnDisable.Size = new System.Drawing.Size(117, 23);
             this.btnDisable.TabIndex = 5;
             this.btnDisable.Text = "Disable";
             this.btnDisable.UseVisualStyleBackColor = true;
@@ -113,9 +99,9 @@
             // btnEnable
             // 
             this.btnEnable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEnable.Location = new System.Drawing.Point(12, 383);
+            this.btnEnable.Location = new System.Drawing.Point(12, 521);
             this.btnEnable.Name = "btnEnable";
-            this.btnEnable.Size = new System.Drawing.Size(91, 23);
+            this.btnEnable.Size = new System.Drawing.Size(117, 23);
             this.btnEnable.TabIndex = 5;
             this.btnEnable.Text = "Enable";
             this.btnEnable.UseVisualStyleBackColor = true;
@@ -124,31 +110,45 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(446, 383);
+            this.btnAdd.Location = new System.Drawing.Point(399, 521);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 23);
+            this.btnAdd.Size = new System.Drawing.Size(137, 23);
             this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Add Map";
+            this.btnAdd.Text = "Add New Map";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDelete.Location = new System.Drawing.Point(109, 412);
+            this.btnDelete.Location = new System.Drawing.Point(135, 550);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(116, 23);
+            this.btnDelete.Size = new System.Drawing.Size(142, 23);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete Map";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // lstbxDisabled
+            // 
+            this.lstbxDisabled.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstbxDisabled.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lstbxDisabled.FormattingEnabled = true;
+            this.lstbxDisabled.IntegralHeight = false;
+            this.lstbxDisabled.ItemHeight = 15;
+            this.lstbxDisabled.Location = new System.Drawing.Point(12, 281);
+            this.lstbxDisabled.Name = "lstbxDisabled";
+            this.lstbxDisabled.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lstbxDisabled.Size = new System.Drawing.Size(524, 226);
+            this.lstbxDisabled.TabIndex = 4;
+            this.lstbxDisabled.Enter += new System.EventHandler(this.lstbxDisabled_Enter);
             // 
             // wMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(548, 447);
+            this.ClientSize = new System.Drawing.Size(548, 585);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEnable);
@@ -164,6 +164,7 @@
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(564, 400);
             this.Name = "wMainMenu";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Multiwinia Map Manager";
             this.ResumeLayout(false);
@@ -177,11 +178,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lstbxEnabled;
-        private System.Windows.Forms.ListBox lstbxDisabled;
         private System.Windows.Forms.Button btnDisable;
         private System.Windows.Forms.Button btnEnable;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ListBox lstbxDisabled;
     }
 }
 
