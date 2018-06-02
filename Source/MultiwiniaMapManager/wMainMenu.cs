@@ -119,18 +119,18 @@ namespace MultiwiniaMapManager
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //Doesnt prompt still. Not sure why but not sure if I care enough to fix it. :/
-            //At least it deletes the files
-            if (lstbxEnabled.SelectedIndex >= 0)
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete all the selected maps?", "Warning", MessageBoxButtons.OKCancel);
+            if(dr == DialogResult.OK)
             {
-                DialogResult dr = MessageBox.Show("Are you sure you want to delete\n" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString(),"Warning",MessageBoxButtons.OKCancel);
-                if(dr == DialogResult.OK)
-                    File.Delete("data\\levels\\" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString());
-            }
+                foreach (var item in lstbxEnabled.SelectedItems)
+                {
+                    File.Delete("data\\levels\\" + item.ToString());
+                }
 
-            if (lstbxDisabled.SelectedIndex >= 0)
-            {
-                File.Delete("data\\levels-disabled\\" + lstbxDisabled.Items[lstbxDisabled.SelectedIndex].ToString());
+                foreach (var item in lstbxDisabled.SelectedItems)
+                {
+                    File.Delete("data\\levels-disabled\\" + item.ToString());
+                }
             }
             refreshLists();
         }
