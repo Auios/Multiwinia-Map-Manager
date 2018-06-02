@@ -17,14 +17,16 @@ namespace MultiwiniaMapManager
         {
             try
             {
-                ProcessStartInfo processInfo = new ProcessStartInfo();
-                processInfo.FileName = "Multiwinia.exe";
+                ProcessStartInfo processInfo = new ProcessStartInfo
+                {
+                    FileName = "Multiwinia.exe"
+                };
                 Process.Start(processInfo);
                 Application.Exit();
             }
             catch(Exception)
             {
-                MessageBox.Show("Multiwinia.exe not found!\nTo fix this error run this program in the same directory with Multiwinia.exe\n", "Bad directory");
+                MessageBox.Show("Multiwinia.exe not found!\nTo fix this error you must run this program from the same directory that contains Multiwinia.exe\n", "Bad directory");
             }
         }
 
@@ -72,17 +74,18 @@ namespace MultiwiniaMapManager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fd = new OpenFileDialog();
-            fd.InitialDirectory = "C:\\";
-            fd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            fd.RestoreDirectory = true;
-            string fileName = "AAAA";
+            OpenFileDialog fd = new OpenFileDialog
+            {
+                InitialDirectory = "C:\\",
+                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*",
+                RestoreDirectory = true
+            };
 
             if(fd.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    fileName = fd.FileName.Substring(fd.FileName.LastIndexOf("\\")).Remove(0,1);
+                    string fileName = fd.FileName.Substring(fd.FileName.LastIndexOf("\\")).Remove(0,1);
                     File.Copy(fd.FileName, "data\\levels\\" + fileName);
                 }
                 catch(Exception ex)
@@ -97,7 +100,7 @@ namespace MultiwiniaMapManager
         {
             if (lstbxEnabled.SelectedIndex >= 0)
             {
-                MessageBox.Show("Are you sure you want to delete\n" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString()));
+                MessageBox.Show("Are you sure you want to delete\n" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString());
                 File.Delete("data\\levels\\" + lstbxEnabled.Items[lstbxEnabled.SelectedIndex].ToString());
             }
 
